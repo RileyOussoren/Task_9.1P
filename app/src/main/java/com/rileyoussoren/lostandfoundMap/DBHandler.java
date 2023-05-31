@@ -6,6 +6,8 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import com.google.android.gms.maps.model.LatLng;
+
 import java.util.ArrayList;
 
 public class DBHandler extends SQLiteOpenHelper {
@@ -50,7 +52,7 @@ public class DBHandler extends SQLiteOpenHelper {
 
     }
 
-    public void addItem(String itemStatus, String itemName, String itemPhone, String itemDescription, String itemDate, String itemLocation){
+    public void addItem(String itemStatus, String itemName, String itemPhone, String itemDescription, String itemDate, LatLng itemLocation){
 
         SQLiteDatabase db = this.getWritableDatabase();
 
@@ -61,7 +63,7 @@ public class DBHandler extends SQLiteOpenHelper {
         values.put(PHONE_COL,itemPhone);
         values.put(DESCRIPTION_COL,itemDescription);
         values.put(DATE_COL,itemDate);
-        values.put(LOCATION_COL,itemLocation);
+        values.put(LOCATION_COL, String.valueOf(itemLocation));
 
         db.insert(TABLE_NAME, null, values);
 

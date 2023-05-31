@@ -9,17 +9,15 @@
     <TextView
         android:id="@+id/itemDetails"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="618dp"
         android:layout_marginStart="14dp"
-        android:layout_marginTop="15dp"
         android:layout_marginEnd="14dp"
-        android:layout_marginBottom="22dp"
         android:text="@string/details"
         android:visibility="invisible"
-        app:layout_constraintBottom_toTopOf="@+id/saveButton"
+        app:layout_constraintBottom_toTopOf="@+id/descriptionEntry"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/descriptionEntry" />
 
     <Button
         android:id="@+id/removeButton"
@@ -36,11 +34,11 @@
         android:id="@+id/spinnerTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="37dp"
         android:layout_marginTop="14dp"
         android:text="Lost And Found Items"
         android:visibility="invisible"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/radioGroup"
         app:layout_constraintTop_toTopOf="@+id/itemDetails" />
 
     <Spinner
@@ -48,32 +46,34 @@
         android:layout_width="0dp"
         android:layout_height="24dp"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="30dp"
-        android:layout_marginBottom="53dp"
+        android:layout_marginBottom="26dp"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="@+id/nameTitle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/radioGroup" />
+        app:layout_constraintTop_toBottomOf="@+id/radioText" />
 
 
     <TextView
         android:id="@+id/radioText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
+        android:layout_marginTop="33dp"
+        android:layout_marginEnd="5dp"
         android:text="Post Type:"
         android:visibility="invisible"
-        app:layout_constraintStart_toStartOf="@+id/itemDetails"
-        app:layout_constraintTop_toTopOf="@+id/itemsSpinner" />
+        app:layout_constraintEnd_toStartOf="@+id/radioGroup"
+        app:layout_constraintTop_toTopOf="@+id/radioGroup" />
 
     <RadioGroup
         android:id="@+id/radioGroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toEndOf="@+id/radioText"
-        app:layout_constraintTop_toBottomOf="@+id/spinnerTitle">
+        android:layout_marginEnd="38dp"
+        app:layout_constraintEnd_toEndOf="@+id/nameTitle"
+        app:layout_constraintTop_toTopOf="@+id/itemDetails">
 
 
         <RadioButton
@@ -99,18 +99,17 @@
 
     <TextView
         android:id="@+id/nameTitle"
-        android:layout_width="0dp"
-        android:layout_height="26dp"
-        android:layout_marginStart="3dp"
-        android:layout_marginTop="95dp"
-        android:layout_marginEnd="3dp"
-        android:layout_marginBottom="95dp"
+        android:layout_width="66dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="146dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="146dp"
         android:text="Name:"
         android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="@+id/createButton"
-        app:layout_constraintEnd_toStartOf="@+id/radioGroup"
-        app:layout_constraintStart_toStartOf="@+id/descriptionTitle"
-        app:layout_constraintTop_toTopOf="@+id/radioGroup" />
+        app:layout_constraintBottom_toTopOf="@+id/nameEntry"
+        app:layout_constraintEnd_toEndOf="@+id/itemsSpinner"
+        app:layout_constraintStart_toStartOf="@+id/phoneEntry"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
 
     <TextView
         android:id="@+id/phoneTitle"
@@ -118,34 +117,31 @@
         android:layout_height="wrap_content"
         android:text="Phone:"
         android:visibility="invisible"
-        app:layout_constraintStart_toStartOf="@+id/nameEntry"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/createButton" />
 
     <TextView
         android:id="@+id/descriptionTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="13dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginBottom="2dp"
+        android:layout_marginStart="34dp"
         android:text="Description:"
         android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/descriptionEntry"
-        app:layout_constraintStart_toStartOf="@+id/itemDetails"
-        app:layout_constraintTop_toBottomOf="@+id/phoneEntry" />
+        app:layout_constraintStart_toStartOf="@+id/mapButton" />
 
     <TextView
         android:id="@+id/dateTitle"
-        android:layout_width="0dp"
+        android:layout_width="76dp"
         android:layout_height="22dp"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="1dp"
+        android:layout_marginTop="23dp"
         android:layout_marginBottom="40dp"
         android:text="Date"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="@+id/dateEntry"
-        app:layout_constraintEnd_toEndOf="@+id/descriptionTitle"
-        app:layout_constraintStart_toStartOf="@+id/dateEntry"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/descriptionEntry" />
 
     <TextView
@@ -154,67 +150,70 @@
         android:layout_height="wrap_content"
         android:text="Location"
         android:visibility="invisible"
-        app:layout_constraintBottom_toTopOf="@+id/selectLocationButton"
-        app:layout_constraintEnd_toEndOf="@+id/selectLocationButton"
-        app:layout_constraintStart_toStartOf="@+id/selectLocationButton" />
+        app:layout_constraintBottom_toTopOf="@+id/editTextText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/nameEntry"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="26dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginEnd="26dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="126dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="126dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="@string/name"
         android:textSize="14sp"
         android:visibility="invisible"
-        app:layout_constraintBottom_toTopOf="@+id/phoneTitle"
+        app:layout_constraintBottom_toTopOf="@+id/descriptionTitle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nameTitle" />
+        app:layout_constraintTop_toTopOf="@+id/itemDetails" />
 
     <EditText
         android:id="@+id/phoneEntry"
         android:layout_width="0dp"
         android:layout_height="63dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="19dp"
-        android:layout_marginEnd="28dp"
-        android:layout_marginBottom="19dp"
+        android:layout_marginStart="23dp"
+        android:layout_marginTop="107dp"
+        android:layout_marginEnd="23dp"
+        android:layout_marginBottom="107dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="@string/phone"
         android:textSize="14sp"
         android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="@+id/descriptionTitle"
+        app:layout_constraintBottom_toBottomOf="@+id/descriptionEntry"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/phoneTitle" />
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
 
     <EditText
         android:id="@+id/descriptionEntry"
         android:layout_width="0dp"
         android:layout_height="62dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginEnd="28dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="@string/description"
         android:textSize="14sp"
         android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/descriptionTitle" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/dateEntry"
         android:layout_width="0dp"
         android:layout_height="40dp"
         android:layout_marginStart="27dp"
+        android:layout_marginTop="162dp"
         android:layout_marginEnd="27dp"
-        android:layout_marginBottom="156dp"
+        android:layout_marginBottom="161dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="@string/date"
@@ -223,7 +222,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/itemDetails"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dateTitle" />
+        app:layout_constraintTop_toTopOf="@+id/showButton" />
 
     <Button
         android:id="@+id/saveButton"
@@ -240,41 +239,43 @@
         android:id="@+id/createButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginBottom="18dp"
+        android:layout_marginTop="18dp"
         android:text="CREATE A NEW ADVERT"
         android:visibility="visible"
-        app:layout_constraintBottom_toTopOf="@+id/showButton"
-        app:layout_constraintStart_toStartOf="@+id/showButton" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nameEntry" />
 
     <Button
         android:id="@+id/showButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="21dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginBottom="7dp"
         android:text="SHOW ALL LOST AND FOUND ITEMS"
         android:visibility="visible"
-        app:layout_constraintBaseline_toBaselineOf="@+id/descriptionTitle"
-        app:layout_constraintEnd_toEndOf="@+id/descriptionEntry" />
+        app:layout_constraintBottom_toTopOf="@+id/descriptionEntry"
+        app:layout_constraintStart_toStartOf="@+id/descriptionEntry" />
 
     <Button
         android:id="@+id/mapButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="33dp"
+        android:layout_marginTop="16dp"
         android:text="SHOW ON MAP"
         android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="@+id/descriptionEntry"
-        app:layout_constraintStart_toEndOf="@+id/dateTitle"
-        app:layout_constraintTop_toBottomOf="@+id/descriptionEntry" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/descriptionEntry" />
 
     <Button
         android:id="@+id/getLocationButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="13dp"
         android:text="GET CURRENT LOCATION"
         android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="@+id/itemDetails"
+        app:layout_constraintBottom_toTopOf="@+id/saveButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -290,12 +291,15 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:context=".MapsActivity" />
 
-    <Button
-        android:id="@+id/selectLocationButton"
+    <EditText
+        android:id="@+id/editTextText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:text="SELECT A LOCATION"
+        android:layout_marginStart="4dp"
+        android:layout_marginBottom="20dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Search Places"
         android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/getLocationButton"
         app:layout_constraintStart_toStartOf="@+id/getLocationButton" />
